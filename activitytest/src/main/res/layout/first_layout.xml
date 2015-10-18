@@ -3,8 +3,14 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
     <Button
         android:id="@+id/button_1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button 1"
+        />
+
+    <TextView android:id="@+id/TextViewFirst_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="first layout text"
         />
 </LinearLayout>

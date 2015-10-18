@@ -1,22 +1,20 @@
-package test.example.com.activitytest;
+package test.example.com.uiwidgettest;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
-import android.widget.TextView;
+
+import test.example.com.uiwidgettest.R;
 
 /**
- * Created by jerometian on 2015/10/17.
+ * Created by jerometian on 2015/10/18.
  */
-public class SecondActivity extends Activity {
+public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.second_layout);
-
+        setContentView(R.layout.action_main);
 
     }
 }

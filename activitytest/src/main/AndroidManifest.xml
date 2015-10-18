@@ -12,6 +12,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FourActivity"/>
         <!--<activity android:name=".SecondActivity" ></activity>-->
         <!--<activity android:name=".SecondActivity" >
             <intent-filter>
@@ -21,13 +22,13 @@
             </intent-filter>
         </activity>-->
 
-        <activity android:name=".ThirdActivity">
+     <!--   <activity android:name=".ThirdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"></action>
                 <category android:name="android.intent.category.DEFAULT"></category>
                 <data android:scheme="http"/>
             </intent-filter>
-        </activity>
+        </activity>-->
     </application>
 
 </manifest>
