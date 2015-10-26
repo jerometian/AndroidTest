@@ -14,7 +14,7 @@
 
         </receiver>-->
 
-        <activity android:name=".MainActivityNew">
+       <!-- <activity android:name=".MainActivityNew">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -24,7 +24,15 @@
             <intent-filter android:priority="1000">
                 <action android:name="com.example.jerometian.broadcasttest.MY_BROADCAST"/>
             </intent-filter>
-        </receiver>
+        </receiver>-->
+        <activity android:name=".MainActivityNew2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 
