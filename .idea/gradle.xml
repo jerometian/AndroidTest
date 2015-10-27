@@ -5,7 +5,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\Program Files\Android\Android Studio\gradle\gradle-2.4" />
+        <option name="gradleHome" value="D:\Android\Android Studio\gradle\gradle-2.4" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/activitylifecycletest" />
             <option value="$PROJECT_DIR$/activitytest" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/broadcastbestpractice" />
             <option value="$PROJECT_DIR$/broadcasttest" />
             <option value="$PROJECT_DIR$/broadcasttest2" />
             <option value="$PROJECT_DIR$/compatv7example" />

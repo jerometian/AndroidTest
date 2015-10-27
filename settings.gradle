@@ -1,1 +1,1 @@
-include ':app', ':activitytest', ':activitylifecycletest', ':uiwidgettest', ':listviewtest', ':compatv7example', ':broadcasttest', ':broadcasttest2'
+include ':app', ':activitytest', ':activitylifecycletest', ':uiwidgettest', ':listviewtest', ':compatv7example', ':broadcasttest', ':broadcasttest2', ':broadcastbestpractice'
