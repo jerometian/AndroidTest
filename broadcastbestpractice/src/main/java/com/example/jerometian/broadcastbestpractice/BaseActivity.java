@@ -1,9 +1,10 @@
 package com.example.jerometian.broadcastbestpractice;
 
 
+import android.app.Activity;
 import android.os.Bundle;
-
 import android.support.v7.app.AppCompatActivity;
+
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
@@ -16,13 +17,13 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
 
         ActivityCollector.removeActivity(this);
-        Fresco.shutDown();
+       // Fresco.shutDown();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
-        Fresco.initialize(this);
+        //Fresco.initialize(this);
     }
 }
