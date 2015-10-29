@@ -179,9 +179,9 @@ public class PageFragment extends android.support.v4.app.Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_page, container, false);
         TextView textView = (TextView)view.findViewById(R.id.textViewinFrame);
-        textView.setText("Fragment #" + mPage);
+        textView.setText("Fragment test #" + mPage);
 
-        if ( mPage ==1) {
+        if ( mPage == 2) {
             RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_1);
             recyclerView.setHasFixedSize(true);
 
