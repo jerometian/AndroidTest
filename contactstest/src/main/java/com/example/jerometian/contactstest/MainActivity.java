@@ -7,10 +7,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 
-
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
     private SimpleFragmentPagerAdapter pagerAdapter;
 
     private ViewPager viewPager;
@@ -21,8 +22,9 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
 /*        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout1);
 //        tabLayout.setTabTextColors(Color.WHITE,Color.GRAY);

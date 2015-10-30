@@ -16,7 +16,7 @@ import android.widget.TextView;
 /**
  * Created by jjtian on 2015/10/29.
  */
-public class SimpleFragmentPagerAdapter  extends FragmentPagerAdapter{
+public class SimpleFragmentPagerAdapter  extends  FragmentPagerAdapter{
 
 
     final int PAGE_COUNT = 3;
