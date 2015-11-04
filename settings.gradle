@@ -1,1 +1,1 @@
-include ':broadcastbestpractice', ':contactstest', ':activitylifecycletest', ':activitytest', ':app'
+include ':broadcastbestpractice', ':contactstest', ':activitylifecycletest', ':activitytest', ':app', ':notificationtest'

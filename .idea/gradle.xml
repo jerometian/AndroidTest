@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/broadcastbestpractice" />
             <option value="$PROJECT_DIR$/contactstest" />
+            <option value="$PROJECT_DIR$/notificationtest" />
           </set>
         </option>
       </GradleProjectSettings>
