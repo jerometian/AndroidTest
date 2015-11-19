@@ -12,5 +12,10 @@ namespace Com.Jerometian.Infrastructure
         {
             return JsonConvert.SerializeObject(data);
         }
+
+        public static object DeserializeObject(string json)
+        {
+            return JsonConvert.DeserializeObject<List<object>>(json);
+        }
     }
 }
