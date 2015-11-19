@@ -1,0 +1,5 @@
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Debug\Infrastructure.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Debug\Infrastructure.pdb
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Debug\Newtonsoft.Json.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\obj\Debug\Infrastructure.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\obj\Debug\Infrastructure.pdb

@@ -2,18 +2,24 @@ package com.example.jerometian.webviewtest;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
 
 /**
  * Created by jjtian on 2015/11/16.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private WebView webView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+//        MainActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+
         webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient() {
