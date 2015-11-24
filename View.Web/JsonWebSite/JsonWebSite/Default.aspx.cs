@@ -15,6 +15,8 @@ namespace Com.Jerometian.JsonWebSite
             GetObject();
             List<Book> books = PopulateBookData();
             string jsonString = NewtonJsonHelper.SerializeObject(books);
+            Response.ContentType = "application/json";
+            Response.ContentEncoding = System.Text.Encoding.UTF8;
             Response.Write(jsonString);
         }
         private void GetObject()
@@ -69,7 +71,6 @@ namespace Com.Jerometian.JsonWebSite
             'text':'Service table 3'  
         }]  
     }]";
-            object res =  NewtonJsonHelper.DeserializeObject(strJson);
         }
 
         private List<Book> PopulateBookData()

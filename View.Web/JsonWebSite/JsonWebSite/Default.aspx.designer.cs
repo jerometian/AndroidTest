@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JsonWebSite {
+namespace Com.Jerometian.JsonWebSite {
     
     
     public partial class _Default {
