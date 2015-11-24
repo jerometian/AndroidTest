@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>d:\rootWeb</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Infrastructure.dll">
+      <publishTime>11/23/2015 16:20:56</publishTime>
+    </File>
+    <File Include="bin/JsonWebSite.dll">
+      <publishTime>11/24/2015 13:55:44</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/02/2013 12:10:10</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>11/24/2015 13:55:26</publishTime>
+    </File>
+    <File Include="getjson.json">
+      <publishTime>11/24/2015 13:50:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.intellisense.js">
+      <publishTime>11/19/2015 10:55:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>11/19/2015 10:55:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>11/19/2015 10:55:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/23/2015 16:20:57</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

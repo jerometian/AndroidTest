@@ -1,0 +1,9 @@
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\JsonWebSite.dll.config
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\JsonWebSite.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\JsonWebSite.pdb
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\Infrastructure.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\Newtonsoft.Json.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\bin\Infrastructure.pdb
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\obj\Release\JsonWebSite.csprojResolveAssemblyReference.cache
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\obj\Release\JsonWebSite.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\JsonWebSite\obj\Release\JsonWebSite.pdb

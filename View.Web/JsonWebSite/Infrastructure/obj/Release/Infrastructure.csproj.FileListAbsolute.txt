@@ -1,0 +1,6 @@
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Release\Infrastructure.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Release\Infrastructure.pdb
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\bin\Release\Newtonsoft.Json.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\obj\Release\Infrastructure.csprojResolveAssemblyReference.cache
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\obj\Release\Infrastructure.dll
+D:\Android\Data\AndroidTest\View.Web\JsonWebSite\Infrastructure\obj\Release\Infrastructure.pdb
