@@ -49,7 +49,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.choose_area);
         recycler = (RecyclerView)findViewById(R.id.list_view);
         textView = (AppCompatTextView)findViewById(R.id.title_text);
@@ -57,12 +57,12 @@ public class ChooseAreaActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 
         recycler.setLayoutManager(linearLayoutManager);
-        recycler.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), recycler, new OnRecyclerViewItemClickListener() {
+
+        /*recycler.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(), recycler, new OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 if ( currentLevel == LEVEL_PROVINCE){
                     selectedProvince = provinceList.get(position);
-//                    queryProvinces();
                 }
             }
 
@@ -70,10 +70,10 @@ public class ChooseAreaActivity extends AppCompatActivity {
             public void onItemLongClick(View view, int position) {
 
             }
-        }));
+        }));*/
         RecyclerView.Adapter adapter = new ChooseAdapter(dataList);
         recycler.setAdapter(adapter);
-        coolWeatherDB = CoolWeatherDB.getInstance(this);
+//        coolWeatherDB = CoolWeatherDB.getInstance(this);
         queryProvinces();
     }
 
