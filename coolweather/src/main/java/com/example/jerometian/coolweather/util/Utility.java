@@ -59,7 +59,7 @@ public class Utility {
         return false;
     }
 
-    public synchronized boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,String response,int cityId)
+    public synchronized static boolean handleCountiesResponse(CoolWeatherDB coolWeatherDB,String response,int cityId)
     {
         if ( !TextUtils.isEmpty(response))
         {

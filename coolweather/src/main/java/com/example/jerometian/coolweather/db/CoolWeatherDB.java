@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.jerometian.coolweather.model.City;
 import com.example.jerometian.coolweather.model.County;
@@ -49,6 +50,7 @@ public class CoolWeatherDB {
     /*load province*/
     public List<Province> loadProvinces() {
 
+        Log.d("debug:","load province...");
         List<Province> list = new ArrayList<Province>();
         Cursor cursor = db.query("Province", null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
