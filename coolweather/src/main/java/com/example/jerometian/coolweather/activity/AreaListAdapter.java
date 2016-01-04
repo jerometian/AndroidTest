@@ -20,12 +20,13 @@ public class AreaListAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHold
     private Context context;
     private List<String> dataList;
     private LayoutInflater layoutInflater;
-
-    public AreaListAdapter(Context context, List<String> dataList)
+    public   OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
+    public AreaListAdapter(Context context, List<String> dataList, final  OnRecyclerViewItemClickListener onRecyclerViewItemClickListener)
     {
         this.context = context;
         this.dataList = dataList;
         layoutInflater = layoutInflater.from(this.context);
+        this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
 
     }
     @Override
@@ -34,7 +35,7 @@ public class AreaListAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final String data = dataList.get(position);
         if (null==data)
             return;
@@ -45,7 +46,10 @@ public class AreaListAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHold
         areaViewHolder.itemContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                if ( onRecyclerViewItemClickListener != null)
+                {
+                    onRecyclerViewItemClickListener.onItemClick(position,data);
+                }
             }
         });
     }

@@ -15,6 +15,7 @@ import android.view.Window;
 
 import com.example.jerometian.coolweather.db.CoolWeatherDB;
 import com.example.jerometian.coolweather.model.City;
+import com.example.jerometian.coolweather.model.County;
 import com.example.jerometian.coolweather.model.Province;
 import com.example.jerometian.coolweather.util.HttpCallbackListener;
 import com.example.jerometian.coolweather.util.HttpUtil;
@@ -51,6 +52,10 @@ public class ChooseAreaActivity extends AppCompatActivity {
      */
     private List<Province> provinceList;
 
+    private  List<City> cityList;
+
+    private  List<County> countyList;
+
     private ProgressDialog progressDialog;
     /**
      * 选中的省份
@@ -70,10 +75,21 @@ public class ChooseAreaActivity extends AppCompatActivity {
 
         recycler.setLayoutManager(linearLayoutManager);
 
-        adapter = new AreaListAdapter(this,dataList);
+        adapter = new AreaListAdapter(this, dataList, new OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(int index,String data) {
+                if (currentLevel == LEVEL_PROVINCE) {
+                    selectedProvince = provinceList.get(index);
+                    queryCities();
+                } else if (currentLevel == LEVEL_CITY) {
+                    selectedCity = cityList.get(index);
+                    queryCounties();
+                }
+            }
+        });
 
         recycler.setAdapter(adapter);
-       coolWeatherDB = CoolWeatherDB.getInstance(this);
+        coolWeatherDB = CoolWeatherDB.getInstance(this);
         queryProvinces();
     }
 
@@ -96,6 +112,44 @@ public class ChooseAreaActivity extends AppCompatActivity {
         } else {
 //            Log.d("debug:","not province data.");
            queryFromServer(null, "province");
+        }
+    }
+
+    /**
+     * 查询选中省内所有的市，优先从数据库查询，如果没有查询到再去服务器上查询。
+     */
+    private void queryCities() {
+        cityList = coolWeatherDB.loadCities(selectedProvince.getId());
+        if (cityList.size() > 0) {
+            dataList.clear();
+            for (City city : cityList) {
+                dataList.add(city.getCityName());
+            }
+            adapter.notifyDataSetChanged();
+            recycler.setSelected(true);
+            textView.setText(selectedProvince.getProvinceName());
+            currentLevel = LEVEL_CITY;
+        } else {
+            queryFromServer(selectedProvince.getProvinceCode(), "city");
+        }
+    }
+
+    /**
+     * 查询选中市内所有的县，优先从数据库查询，如果没有查询到再去服务器上查询。
+     */
+    private void queryCounties() {
+        countyList = coolWeatherDB.loadCounties(selectedCity.getId());
+        if (countyList.size() > 0) {
+            dataList.clear();
+            for (County county : countyList) {
+                dataList.add(county.getCountyName());
+            }
+            adapter.notifyDataSetChanged();
+            recycler.setSelected(true);
+            textView.setText(selectedCity.getCityName());
+            currentLevel = LEVEL_COUNTY;
+        } else {
+            queryFromServer(selectedCity.getCityCode(), "county");
         }
     }
 
@@ -143,9 +197,9 @@ public class ChooseAreaActivity extends AppCompatActivity {
                                 queryProvinces();
                                 Toast.makeText(ChooseAreaActivity.this, "加载成功1", Toast.LENGTH_SHORT).show();
                             } else if ("city".equals(type)) {
-                               // queryCities();
+                                queryCities();
                             } else if ("county".equals(type)) {
-                                //queryCounties();
+                                queryCounties();
                             }
                         }
                     });
@@ -185,6 +239,16 @@ public class ChooseAreaActivity extends AppCompatActivity {
     private void closeProgressDialog() {
         if (progressDialog != null) {
             progressDialog.dismiss();
+        }
+    }
+
+    public void onBackPressed() {
+        if (currentLevel == LEVEL_COUNTY) {
+            queryCities();
+        } else if (currentLevel == LEVEL_CITY) {
+            queryProvinces();
+        } else {
+            finish();
         }
     }
 }
