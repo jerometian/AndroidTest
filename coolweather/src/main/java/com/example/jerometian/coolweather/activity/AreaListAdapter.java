@@ -42,6 +42,12 @@ public class AreaListAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHold
         if ( !TextUtils.isEmpty(data)){
             ((AreaViewHolder) holder).mTextView.setText(Html.fromHtml(data));
         }
+        areaViewHolder.itemContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
     }
 
     @Override
@@ -55,10 +61,12 @@ public class AreaListAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class AreaViewHolder extends  RecyclerView.ViewHolder{
-         TextView mTextView;
+        View itemContainer;
+        TextView mTextView;
         public  AreaViewHolder(View iteView)
         {
             super(iteView);
+            itemContainer = iteView.findViewById(R.id.item_container);
             mTextView = (TextView)itemView.findViewById(R.id.area_title);
 
         }

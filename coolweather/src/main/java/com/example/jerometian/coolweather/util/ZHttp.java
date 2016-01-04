@@ -1,5 +1,8 @@
 package com.example.jerometian.coolweather.util;
 
+import android.util.Log;
+
+import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Request.Builder;
@@ -51,13 +54,16 @@ public class ZHttp {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Log.d("debug:","start get request...");
                 try {
                     Response response = execute(urlStr);
 
 
                     if ( listener != null)
                     {
-                        listener.onFinished(response.body().string());
+                        String result = response.body().string();
+//                        Log.d("debug:",result);
+                        listener.onFinished(result);
                     }
                     /*if (response == null)
                         return null;
@@ -71,6 +77,47 @@ public class ZHttp {
 
 
         return null;
+    }
+
+    /**
+     * 通过get请求，获取json实例
+     *
+     * @param urlStr 请求地址
+     */
+    public static String getString1(final  String urlStr) {
+                try {
+                    Response response = execute(urlStr);
+
+                    if (response == null)
+                        return null;
+                    return response.body().string();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+
+        return null;
+    }
+
+    public static  void getString2(final  String urlStr) {
+
+        OkHttpClient client = getHttpClient();
+        Request request = new Request.Builder()
+                .url(urlStr)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                Log.e("okHttp",e.toString());
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                 response.body().string();
+            }
+        });
     }
 
     public static byte[] getBytes(String url) {

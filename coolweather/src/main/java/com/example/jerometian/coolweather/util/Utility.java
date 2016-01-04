@@ -1,6 +1,7 @@
 package com.example.jerometian.coolweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.jerometian.coolweather.db.CoolWeatherDB;
 import com.example.jerometian.coolweather.model.City;
@@ -13,6 +14,7 @@ import com.example.jerometian.coolweather.model.Province;
 public class Utility {
     public synchronized  static  boolean handleProvincesResponse(CoolWeatherDB coolWeatherDB,String response)
     {
+        Log.d("debug:","start handle province response data.");
         if ( !TextUtils.isEmpty(response))
         {
             String[] allProvinces = response.split(",");
@@ -24,6 +26,8 @@ public class Utility {
                     Province  province = new Province();
                     province.setProvinceCode(array[0]);
                     province.setProvinceName(array[1]);
+//                    Log.d("debug:ProvinceCode",array[0]);
+//                    Log.d("debug:ProvinceName",array[1]);
                     coolWeatherDB.saveProvince(province);
                 }
                 return  true;

@@ -79,13 +79,14 @@ public class ChooseAreaActivity extends AppCompatActivity {
 
 
     private void queryProvinces() {
-       Log.d("debug:","start province...");
+
         provinceList = coolWeatherDB.loadProvinces();
+
         if (provinceList.size() > 0) {
             dataList.clear();
             for (Province province : provinceList) {
                 dataList.add(province.getProvinceName());
-                Log.d("province:",province.getProvinceName());
+//                Log.d("province:",province.getProvinceName());
             }
 
             adapter.notifyDataSetChanged();
@@ -93,7 +94,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
             textView.setText("中国");
             currentLevel = LEVEL_PROVINCE;
         } else {
-            Log.d("debug:","not province data.");
+//            Log.d("debug:","not province data.");
            queryFromServer(null, "province");
         }
     }
@@ -109,11 +110,17 @@ public class ChooseAreaActivity extends AppCompatActivity {
         } else {
             address = "http://www.weather.com.cn/data/list3/city.xml";
         }
+
+ /*        address= String.format("%/s%/s/","http://wcf.open.cnblogs.com/blog","TenDaysTopDiggPosts");
+        String  result = ZHttp.getString1(address);
+        Log.d("data:",result);*/
+
         ZHttp.getString(address, new HttpCallbackListener() {
             @Override
             public void onFinished(String response) {
                 boolean result = false;
                 if ("province".equals(type)) {
+//                    Log.d("debug:","equal province?");
                     result = Utility.handleProvincesResponse(coolWeatherDB,
                             response);
                 } else if ("city".equals(type)) {

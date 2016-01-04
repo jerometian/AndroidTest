@@ -39,11 +39,13 @@ public class CoolWeatherDB {
     }
 
     public void saveProvince(Province province) {
-        if (province == null) {
+        if (province != null) {
             ContentValues values = new ContentValues();
             values.put("province_name", province.getProvinceName());
             values.put("province_code", province.getProvinceCode());
+            Log.d("debug:","before save:");
             db.insert("Province", null, values);
+            Log.d("debug:","finished saved:");
         }
     }
 
