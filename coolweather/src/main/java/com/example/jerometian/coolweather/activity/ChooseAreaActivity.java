@@ -168,7 +168,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
  /*        address= String.format("%/s%/s/","http://wcf.open.cnblogs.com/blog","TenDaysTopDiggPosts");
         String  result = ZHttp.getString1(address);
         Log.d("data:",result);*/
-
+        showProgressDialog();
         ZHttp.getString(address, new HttpCallbackListener() {
             @Override
             public void onFinished(String response) {
@@ -190,7 +190,7 @@ public class ChooseAreaActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            //closeProgressDialog();
+                            closeProgressDialog();
 
                             Toast.makeText(ChooseAreaActivity.this, "加载成功", Toast.LENGTH_SHORT).show();
                             if ("province".equals(type)) {
